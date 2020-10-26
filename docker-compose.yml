@@ -11,11 +11,11 @@ services:
     ports:
       - ${BACKDROP_PORT}:80 
     volumes:
-      - /srv/www/backdrop/html/files:/var/www/html/files
-      - /srv/www/backdrop/html/sites:/var/www/html/sites
-      - /srv/www/backdrop/html/layouts:/var/www/html/layouts
-      - /srv/www/backdrop/html/modules:/var/www/html/modules
-      - /srv/www/backdrop/html/themes:/var/www/html/themes
+      - ${BACKDROP_SITE}files:/var/www/html/files
+      - ${BACKDROP_SITE}sites:/var/www/html/sites
+      - ${BACKDROP_SITE}layouts:/var/www/html/layouts
+      - ${BACKDROP_SITE}modules:/var/www/html/modules
+      - ${BACKDROP_SITE}themes:/var/www/html/themes
     environment:
       BACKDROP_DB_HOST: "${BACKDROP_DB_HOST}"
       BACKDROP_DB_PORT: "${BACKDROP_DB_PORT}"
